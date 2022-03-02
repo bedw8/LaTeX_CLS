@@ -1,0 +1,111 @@
+%MIT License
+%
+%Copyright (c) 2020 default.cls
+%
+%Permission is hereby granted, free of charge, to any person obtaining a copy
+%of this software and associated documentation files (the "Software"), to deal
+%in the Software without restriction, including without limitation the rights
+%to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%copies of the Software, and to permit persons to whom the Software is
+%furnished to do so, subject to the following conditions:
+%
+%The above copyright notice and this permission notice shall be inclMIT License
+%copies or substantial portions of the Software.
+%
+%THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%SOFTWARE.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{default}
+
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\PassOptionsToClass{english}{babel}
+\ProcessOptions \relax
+\LoadClass{article}
+
+\RequirePackage[letterpaper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[spanish, es-tabla,es-lcroman]{babel}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{mathrsfs}
+\RequirePackage{graphicx}
+\RequirePackage{enumerate}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{multicol}
+\RequirePackage{caption}
+\RequirePackage{tabularx}
+\RequirePackage{datetime}
+\RequirePackage{xparse}
+
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\bfseries}
+%\titleformat*{\subsubsection}
+\titlelabel{\thetitle. \,}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lag}{\mathscr{L}}
+\newcommand{\ham}{\mathscr{H}}
+
+\newcommand{\bra}[1]{\left\langle #1 \right|  }
+\newcommand{\ket}[1]{\left| #1 \right\rangle  }
+
+% \newcommand{\braket[1]}{\left\langle #1 \right\rangle }
+
+% \newcommand{\braket[2]}{\left\langle #1 | #2  \right\rangle }
+% \newcommand{\braket[3]}{\left\langle #1 | #2 | #3  \right\rangle }
+
+\DeclareDocumentCommand\bracket{ m g g }{%
+  {
+    \ensuremath{
+      \left\langle #1
+        \IfNoValueF {#2} { | #2 }%
+        \IfNoValueF {#3} { | #3 }%
+      \right\rangle
+    }
+  }
+}
+
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+    \or Enero%
+    \or Febrero%
+    \or Marzo%
+    \or Abril%
+    \or Mayo%
+    \or Junio%
+    \or Julio%
+    \or Agosto%
+    \or Septiembre%
+    \or Octubre%
+    \or Noviembre%
+    \or Diciembre%
+  \fi}
+
+
+% \newdateformat{monthyeardate}{%
+%   \monthname[\THEMONTH], \THEYEAR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\DeclareMathOperator\erf{erf}
+\newcommand{\p}{\partial}
+
+
+
+
+
+
+
+
+
+\endinput
