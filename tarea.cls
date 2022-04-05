@@ -29,6 +29,7 @@
 
 \RequirePackage{subfiles}
 \RequirePackage{fancyhdr}
+\RequirePackage{etoolbox}
 
 \titleformat*{\section}{\bfseries}
 \titleformat*{\subsection}{\bfseries}
@@ -39,51 +40,61 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\def\@facultad{Facultad de Ciencias}
 \newcommand\facultad[1]{\renewcommand\@facultad{#1}}
-\newcommand\@facultad{Facultad de Ciencias}
 
+\def\@curso{}
 \newcommand\curso[1]{\renewcommand\@curso{#1}}
-\newcommand\@curso{}
 
+\def\@ntarea{1}
 \newcommand\ntarea[1]{\renewcommand\@ntarea{#1}}
-\newcommand\@ntarea{1}
 
+\def\@tarea{Tarea}
 \newcommand\tarea[1]{\renewcommand\@tarea{#1}}
-\newcommand\@tarea{Tarea}
 
-\newcommand\profesor[1]{\renewcommand\@profesor{#1}}
-\newcommand\@profesor{}
+\newcommand\profesor[1]{
+\addperson{Profesor}{#1}
+}
 
-\newcommand\ayudante[1]{\renewcommand\@ayudante{#1}}
-\newcommand\@ayudante{}
+\newcommand\ayudante[1]{
+\addperson{Ayudante}{#1}
+}
+
+\newcommand\auxiliar[1]{
+\addperson{Auxiliar}{#1}
+}
+
+\newcommand\cargo[2][Cargo]{
+   #1:\hspace{-5mm} &
+     \begin{tabular}[t]{l}
+       #2
+     \end{tabular}\\
+ }
+
+\newcommand\@personal{}
+\newcommand\addperson[2]{\appto\@personal{
+    \cargo[#1]{#2}
+}}
 
 \thispagestyle{fancy}
 %\fancyh{}
-\lhead{
+\lhead{\noindent
   \begin{tabular}[t]{l}
-    \small{\@facultad}\\
-    \small{Universidad de Chile}
+    \@facultad\\
+    Universidad de Chile
   \end{tabular}
 }
-\fancyhead[R]{
-  \small{\begin{tabular}[t]{rl}
-           Profesor:\hspace{-4mm}
-           &
-             \begin{tabular}[t]{l}
-               \@profesor
-             \end{tabular}\\
-           Ayudante:\hspace{-4mm}
-           &
-             \begin{tabular}[t]{l}
-               \@ayudante
-             \end{tabular}
+\rhead{
+  {\begin{tabular}[t]{rl}
+        \@personal
          \end{tabular}}
 }
 
-\setlength{\headheight}{25pt}
+\setlength{\headheight}{40pt}
 \renewcommand{\headrulewidth}{0.0pt}
-\fancyheadoffset[l]{6pt}
-\fancyheadoffset[r]{15pt}
+%\fancyheadoffset[l]{6pt}
+\fancyheadoffset[l]{\marginparpush + 1pt}
+\fancyheadoffset[r]{\marginparsep}
       
 \def\maketitle{
   \begin{center}
@@ -93,9 +104,9 @@
       \large{\\\@curso}
     }
   \end{center}
-  \vspace{15pt}
+  \vspace{0mm}
 
-\noindent \textbf{\@author} \hfill \textbf{\@date}
+\noindent\textbf{\@author} \hfill \textbf{\@date}
 
 \vspace{1mm}\noindent\hrule height 0.4mm \relax
 \phantom \newline\newline

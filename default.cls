@@ -28,7 +28,7 @@
 \ProcessOptions \relax
 \LoadClass{article}
 
-\RequirePackage[letterpaper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\RequirePackage[letterpaper,left=1.5cm,right=1.5cm,top=2cm,bottom=2.5cm]{geometry}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[spanish, es-tabla,es-lcroman]{babel}
 \RequirePackage{amsmath}
@@ -40,6 +40,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{multicol}
+\RequirePackage{calc}
 \RequirePackage{caption}
 \RequirePackage{tabularx}
 \RequirePackage{datetime}
@@ -92,8 +93,8 @@
   \fi}
 
 
-% \newdateformat{monthyeardate}{%
-%   \monthname[\THEMONTH], \THEYEAR}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
