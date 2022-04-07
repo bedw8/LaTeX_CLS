@@ -21,12 +21,10 @@
 %SOFTWARE.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{default}
+\ProvidesPackage{default}
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \PassOptionsToClass{english}{babel}
 \ProcessOptions \relax
-\LoadClass{article}
 
 \RequirePackage[letterpaper,left=1.5cm,right=1.5cm,top=2cm,bottom=2.5cm]{geometry}
 \RequirePackage[utf8]{inputenc}
@@ -45,6 +43,8 @@
 \RequirePackage{tabularx}
 \RequirePackage{datetime}
 \RequirePackage{xparse}
+\RequirePackage{import}
+
 
 \titleformat*{\section}{\bfseries}
 \titleformat*{\subsection}{\bfseries}

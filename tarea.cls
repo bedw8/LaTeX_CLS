@@ -23,12 +23,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tarea}
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{default}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions \relax
-\LoadClass{default}
+\LoadClass{article}
 
-\RequirePackage{subfiles}
-\RequirePackage{fancyhdr}
+\RequirePackage{default}
 \RequirePackage{etoolbox}
 
 \titleformat*{\section}{\bfseries}
