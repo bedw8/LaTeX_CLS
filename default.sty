@@ -41,7 +41,6 @@
 \RequirePackage{calc}
 \RequirePackage{caption}
 \RequirePackage{tabularx}
-\RequirePackage{datetime}
 \RequirePackage{xparse}
 \RequirePackage{import}
 
@@ -75,8 +74,7 @@
   }
 }
 
-
-\newcommand{\MONTH}{%
+\newcommand{\Mes}{%
   \ifcase\the\month
     \or Enero%
     \or Febrero%
@@ -93,8 +91,6 @@
   \fi}
 
 
-\newdateformat{monthyeardate}{%
-  \monthname[\THEMONTH], \THEYEAR}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

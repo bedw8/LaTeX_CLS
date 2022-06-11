@@ -25,10 +25,11 @@
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions \relax
-\LoadClass{article}
+\LoadClass[11pt]{article}
 
 \RequirePackage{default}
 \RequirePackage{etoolbox}
+\RequirePackage{microtype}
 
 \titleformat*{\section}{\bfseries}
 \titleformat*{\subsection}{\bfseries}
@@ -108,7 +109,7 @@
 \noindent\textbf{\@author} \hfill \textbf{\@date}
 
 \vspace{1mm}\noindent\hrule height 0.4mm \relax
-\phantom \newline\newline
+\vspace{\baselineskip}
 
 
 }
