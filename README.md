@@ -4,7 +4,7 @@ My LaTeX Classes
 # Install ?
 
 1. you can clone this repo and copy the .sty and .cls files to the directory of your .tex file
-2. to avoid copy the files to every proyect, clone the repo to `~/texmf/tex/latex/local/` (tested on linux) and 
+2. to avoid copy the files to every proyect, clone the repo to `~/texmf/tex/latex/local/` (tested on linux)
 
 # Usage
 
