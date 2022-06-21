@@ -108,9 +108,5 @@
 
 \noindent\textbf{\@author} \hfill \textbf{\@date}
 
-\vspace{1mm}\noindent\hrule height 0.4mm \relax
-\vspace{\baselineskip}
-
-
-}
+\vspace{1mm}\noindent\hrule height 0.4mm \relax}
 \endinput
